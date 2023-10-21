@@ -1,6 +1,6 @@
 import './App.css';
 import Form from './modules/Form';
-
+import HomePage from './modules/HomePage/HomePage';
 import SignIn from './modules/Form/sign_in';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import {ToastContextProvider} from './components/ToastContext';
@@ -23,7 +23,7 @@ function App() {
     <Routes>
       <Route path='/' element={
         <ProtectedRoute auth={true}>
-        {/* <Dashboard/> */}
+        <HomePage/>
       </ProtectedRoute>
       }/> 
       
