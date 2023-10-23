@@ -16,8 +16,8 @@ const Sign_in = () => {
     const navigate = useNavigate();
     const {toast} = useContext(ToastContext)
     const handleSubmit = async(e) => {
-        console.log('data :>> ', data);
-        e.preventDefault()
+        //console.log('data :>> ', data);
+        e.preventDefault();
         
         const res = await fetch(`http://localhost:8000/api/login`, {
             method: 'POST',

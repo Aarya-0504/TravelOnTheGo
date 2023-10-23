@@ -2,7 +2,7 @@ import React from "react";
 import { Fragment } from "react";
 import './NavBar.css'
 import { Menu, Transition } from "@headlessui/react";
-
+import SideBar from "../SideBar";
 function Navbar() {
     const Component = () => {
       return (
@@ -10,6 +10,7 @@ function Navbar() {
           {({ open }) => (
             <>
               <div>
+                <SideBar/>
                 <Menu.Button className=" inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

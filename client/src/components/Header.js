@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ToastContext from "./ToastContext";
 import { useEffect, useRef, useState } from 'react';
 import { useContext } from "react";
-
+import SideBar from "./SideBar";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -25,6 +25,7 @@ const Header = (props) => {
   const { setQuery, searchQuery } = props;
   return (
     <div className="header">
+        <SideBar/>
       <img
         className="header__image"
          src={travelonthego}

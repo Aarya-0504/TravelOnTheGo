@@ -7,6 +7,8 @@ import FoodOptions from "../../components/FoodOptions";
 import Food from "../../components/Food";
 import { Menu, Transition } from "@headlessui/react";
 import Header from "../../components/Header";
+import Footer from "../../components/footer/Footer";
+
 const HomePage=()=>{
     const [location, setLocation] = useState("Chennai");
   const [searchQuery, setQuery] = useState("");
@@ -28,6 +30,7 @@ const HomePage=()=>{
       <FilterButtons filters={filters} onChangeFilters={onChangeFilters} />
       <h1 className="mx-44 pt-4 text-3xl font-normal food-head" >Best Food in {location}</h1>
       <Food filters={filters} />
+      <Footer/>
     </div>
   );
 }
