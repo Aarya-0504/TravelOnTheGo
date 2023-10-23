@@ -8,20 +8,14 @@
     margin: 0 auto;
   }
   
-  button.login {
-    margin: 1rem 1rem 1rem 2rem
-  }
-  
-  button > h1.signup {
-    /* padding: 0; */
-    margin: 1rem 0 1rem 1rem;
-  }
+
   
   .header__image {
-    width: 127px;
-    height: 27px;
+    width: 120px;
+    height: 50px;
     margin-left: 15px;
     margin-top: 5px;
+    padding-right: 10px;
   }
   
   @media screen and (max-width: 900px) {

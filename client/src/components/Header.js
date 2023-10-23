@@ -1,10 +1,16 @@
 import "./Header.css";
 import { Fragment } from "react";
 import Find from "./Find";
-
+import travelonthego from './icons/Travel-PNG-HD-Image.png';
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import NavBar from "./NavBar";
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import ToastContext from "./ToastContext";
+import { useEffect, useRef, useState } from 'react';
+import { useContext } from "react";
 
 
 function classNames(...classes) {
@@ -12,14 +18,17 @@ function classNames(...classes) {
 }
 
 const Header = (props) => {
+    const {toast}=useContext(ToastContext);
+    const navigate = useNavigate();
   const [location, setLocation] = props.functions;
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user:detail')));
   const { setQuery, searchQuery } = props;
   return (
     <div className="header">
       <img
         className="header__image"
-        src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
-        alt="zomato"
+         src={travelonthego}
+        alt="TravelOnTheGo"
       />
 
       {/* Dropdown start */}
@@ -188,7 +197,14 @@ const Header = (props) => {
     </div>
 
       <div className="lg:inline-flex hidden">
-        Hello
+      <button class="nav-item h-10 px-5 mx-5 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline  hover:bg-red-800" onClick={()=>{
+              setUser(null);
+              localStorage.clear();
+              toast.success("Logged out");
+              navigate("/users/sign_in",{replace:true});
+            }}>
+             
+			  Logout</button> 
       </div>
       
       <div className="lg:hidden navbar">
