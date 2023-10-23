@@ -7,7 +7,7 @@ const ThedropDown = () => {
   const navigate=useNavigate();
 
   const handleOpenMaps = () => {
-    navigate('/maps')
+    navigate('/maps');
   };
   return (
     <Dropdown className='dropdown-basic'>

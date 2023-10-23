@@ -39,9 +39,7 @@ function App() {
       </ProtectedRoute>
       }/>
       <Route path='/maps' element={
-        
         <Mappu/>
-      
       }/>
     </Routes>
     </ToastContextProvider>
