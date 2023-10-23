@@ -1,9 +1,11 @@
 import React from 'react'
 import "./FoodOptions.css";
+import SideBar from './SideBar';
 
 const FoodOptions = () => {
   return (
     <div className="flex mt-10 justify-around px-20 food-options-container" >
+      
         <div className="flex selected-option-border">
           <button className="bg-pink-100 hover:bg-pink-200 mx-5 py-3 px-3 rounded-full">
             <img className="w-10 h-10 bg-pink-100 hover:bg-pink-200"

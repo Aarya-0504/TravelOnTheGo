@@ -15,7 +15,8 @@
     height: 50px;
     margin-left: 15px;
     margin-top: 5px;
-    padding-right: 10px;
+    margin-right: 100px;
+    padding-right: 15px;
   }
   
   @media screen and (max-width: 900px) {

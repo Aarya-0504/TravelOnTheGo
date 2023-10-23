@@ -2,7 +2,7 @@ import "./Header.css";
 import { Fragment } from "react";
 import Find from "./Find";
 import travelonthego from './icons/Travel-PNG-HD-Image.png';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import NavBar from "./NavBar";
 import React from "react";
@@ -12,6 +12,7 @@ import ToastContext from "./ToastContext";
 import { useEffect, useRef, useState } from 'react';
 import { useContext } from "react";
 import SideBar from "./SideBar";
+import DropDown from './ThedropDown'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -25,13 +26,18 @@ const Header = (props) => {
   const { setQuery, searchQuery } = props;
   return (
     <div className="header">
-        <SideBar/>
+      <div onClick={()=>{navigate('/'); console.log('Clicked')}}>
       <img
         className="header__image"
          src={travelonthego}
         alt="TravelOnTheGo"
       />
-
+      </div>  
+      
+      <div>
+      <DropDown/>
+      </div>
+      
       {/* Dropdown start */}
       <Menu as="div" className="relative mx-8 -mt-2 inline-block text-left loc-dropdown">
         {({ open }) => (

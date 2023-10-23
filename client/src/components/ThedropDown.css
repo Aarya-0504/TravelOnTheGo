@@ -1,0 +1,4 @@
+#dropdown-basic + .dropdown-menu {
+    background-color: rgb(224, 213, 213);
+    color: rgb(3, 3, 3); /* Change text color to contrast with the background */
+  }

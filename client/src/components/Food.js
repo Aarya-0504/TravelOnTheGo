@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
 import "./Food.css";
-
+import SideBar from "./SideBar";
 const Food = ({ filters }) => {
   const [resDetail, setResDetail] = useState([]);
   const [filteredRes, setFilteredRes] = useState([]);
@@ -33,6 +33,7 @@ const Food = ({ filters }) => {
 
   return (
     <>
+    
       <div className="text-gray-400  body-font">
         <div className="container food-body px-10 py-10 md:mx-auto">
           <div className="flex flex-wrap md:-m-4 md:pl-6 foods-container">

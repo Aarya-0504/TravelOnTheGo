@@ -4,6 +4,7 @@ import HomePage from './modules/HomePage/HomePage';
 import SignIn from './modules/Form/sign_in';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import {ToastContextProvider} from './components/ToastContext';
+import Mappu from './components/Mappu';
 
 const ProtectedRoute=({children, auth=false})=>{
   const isLoggedIn = localStorage.getItem('user:token') !==null || false;
@@ -36,6 +37,11 @@ function App() {
         <ProtectedRoute>
         <Form/>
       </ProtectedRoute>
+      }/>
+      <Route path='/maps' element={
+        
+        <Mappu/>
+      
       }/>
     </Routes>
     </ToastContextProvider>
