@@ -36,7 +36,7 @@ const feedback = async (req, res) => {
       return res.json({ message: "Error: Message is not sent" });
     } else {
       console.log("Email sent: " + info);
-      return res.json({ message: "Message sent with success" });
+      return res.json({ message: "Thanks for your valuable feedback! An email copy of your feedback is emailed to you! Also your special offer coupon code:'Zx4cFG'" });
     }
   });
 };
