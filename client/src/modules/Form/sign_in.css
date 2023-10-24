@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signin {
+    background-image: url('./bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    width: 100%;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+  }
+  

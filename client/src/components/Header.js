@@ -35,7 +35,7 @@ const Header = (props) => {
       </div>  
       
       <div>
-      <DropDown/>
+      {/* <DropDown/> */}
       </div>
       
       {/* Dropdown start */}
@@ -204,14 +204,9 @@ const Header = (props) => {
     </div>
 
       <div className="lg:inline-flex hidden">
-      <button class="nav-item h-10 px-5 mx-5 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline  hover:bg-red-800" onClick={()=>{
-              setUser(null);
-              localStorage.clear();
-              toast.success("Logged out");
-              navigate("/users/sign_in",{replace:true});
-            }}>
+      {/* <button class="nav-item h-10 px-5 mx-5 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline  hover:bg-red-800" >
              
-			  Logout</button> 
+			  Logout</button>  */}
       </div>
       
       <div className="lg:hidden navbar">
