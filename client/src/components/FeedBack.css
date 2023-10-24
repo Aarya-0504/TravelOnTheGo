@@ -61,7 +61,7 @@
 
 /* Send Feedback button */
 .button {
-  background-color: #ff3636;
+  background-color: #c58484;
   color: white;
   border: none;
   border-radius: 5px;
@@ -73,7 +73,7 @@
 }
 
 .button:hover {
-  background-color: #c34a4a;
+  background-color: #5e9f53;
   transform: scale(1.05);
 }
 

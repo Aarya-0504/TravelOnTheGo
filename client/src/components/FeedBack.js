@@ -94,7 +94,7 @@ function FeedBack() {
           />
         </div>
         <div className="form__controls">
-          <button className="button">Send Feedback</button>
+          <button className="btn btn-danger">Send Feedback</button>
         </div>
       </form>
       <p>{result}</p>
