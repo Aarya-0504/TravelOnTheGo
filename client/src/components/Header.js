@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useContext } from "react";
 import SideBar from "./SideBar";
 import DropDown from './ThedropDown'
-
+import UserInfo from "./UserInfo/UserInfo";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -211,6 +211,9 @@ const Header = (props) => {
       
       <div className="lg:hidden navbar">
         <NavBar />
+      </div>
+      <div>
+
       </div>
     </div>
   );
