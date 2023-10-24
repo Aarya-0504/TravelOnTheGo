@@ -9,6 +9,9 @@ const ThedropDown = () => {
   const handleOpenMaps = () => {
     navigate('/maps');
   };
+  const handleFeedback = () => {
+    navigate('/feedback');
+  };
   return (
     <Dropdown className='dropdown-basic'>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -17,6 +20,7 @@ const ThedropDown = () => {
 
       <Dropdown.Menu>
       <Dropdown.Item onClick={handleOpenMaps}>Open Maps</Dropdown.Item>
+      <Dropdown.Item onClick={handleFeedback}>Feedback</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

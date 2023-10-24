@@ -5,6 +5,7 @@ import SignIn from './modules/Form/sign_in';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import {ToastContextProvider} from './components/ToastContext';
 import Mappu from './components/Mappu';
+import FeedBack from './components/FeedBack'
 
 const ProtectedRoute=({children, auth=false})=>{
   const isLoggedIn = localStorage.getItem('user:token') !==null || false;
@@ -40,6 +41,9 @@ function App() {
       }/>
       <Route path='/maps' element={
         <Mappu/>
+      }/>
+      <Route path='/feedback' element={
+        <FeedBack/>
       }/>
     </Routes>
     </ToastContextProvider>

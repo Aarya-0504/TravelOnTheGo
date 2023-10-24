@@ -1,9 +1,10 @@
 const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const cors = require('cors');
+const cors = require("cors");
+const corsConfigs = require("./config/corsConfigs");
 require('./db/connection');
-
+require("dotenv").config();
 const PORT=8000
 
 const Users = require('./models/Users');
@@ -13,7 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-
+app.use(cors(corsConfigs));
+app.use("/api", require("./routes/feedbackRoutes"));
 //routes
 app.get('/', (req, res) => {
     res.send('Welcome');

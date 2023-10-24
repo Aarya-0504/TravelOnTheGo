@@ -1,0 +1,74 @@
+.feedback {
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .button {
+    height: 40px;
+    width: 150px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    margin: auto;
+  }
+  .button:hover {
+    background-color: #84c586;
+    color: whitesmoke;
+    border-color: gray;
+    transform: scale(1.1);
+  }
+  .form__controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 2px;
+  }
+  .form__controls > label {
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+  }
+  
+  .form__controls > input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: 0.1s ease-in-out;
+  }
+  .form__controls > textarea {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: 0.1s ease-in-out;
+  }
+  .form__controls > input:focus,
+  textarea:focus {
+    outline: 2px solid #84c586;
+    outline-offset: 1px;
+    transform: scale(1.05);
+  }
+  
+  .form__container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px;
+    width: 450px;
+  }
+  @media only screen and (max-width: 480px) {
+    .form__container {
+      width: 290px;
+    }
+    .form__controls > input {
+      width: 150px;
+    }
+    .form__controls > textarea {
+      width: 280px;
+    }
+  }
