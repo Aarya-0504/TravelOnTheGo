@@ -3,7 +3,7 @@ import Button from "../../components/Button"
 import Input from "../../components/Input"
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
-
+import './sign_up.css'
 import 'react-toastify/dist/ReactToastify.css';
 import ToastContext from '../../components/ToastContext';
 
@@ -42,7 +42,7 @@ const Form = () => {
         }
     }
   return (
-    <div className="bg-light h-screen flex items-center justify-center">
+    <div className="signup h-screen flex items-center justify-center">
         <div className=" bg-white w-[600px] h-[800px] shadow-lg rounded-lg flex flex-col justify-center items-center">
             <div className=" text-4xl font-extrabold">Welcome</div>
             <div className=" text-xl font-light mb-14">Sign up to get started</div>

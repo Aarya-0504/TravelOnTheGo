@@ -2,7 +2,7 @@ const rateLimit = require("express-rate-limit");
 
 const rateLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, //1 hour limit
-  max: 20, //5 request limit
+  max: 5, //5 request limit
   message: {
     message: "Too many feedbacks from this IP, please try later after 1 hour",
   },

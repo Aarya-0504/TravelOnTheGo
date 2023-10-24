@@ -1,4 +1,5 @@
 import React from "react";
+import { Form, Button } from 'react-bootstrap';
 import { useEffect, useRef, useState } from "react";
 import './FeedBack.css'
 function FeedBack() {
@@ -50,7 +51,7 @@ function FeedBack() {
   }, []);
 
   return (
-    <div className="feedback">
+    <div className="p-4 feedback">
       <h1>Fomr2Email - Feedback</h1>
       <form onSubmit={handleSubmit} className="form__container">
         <div className="form__controls">
