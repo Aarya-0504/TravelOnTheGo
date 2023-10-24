@@ -20,7 +20,7 @@ const ThedropDown = () => {
 
       <Dropdown.Menu>
       <Dropdown.Item onClick={handleOpenMaps}>Open Maps</Dropdown.Item>
-      <Dropdown.Item onClick={handleFeedback}>Feedback</Dropdown.Item>
+      <Dropdown.Item onClick={handleFeedback}>Feedback</Dropdown.Item>  
       </Dropdown.Menu>
     </Dropdown>
   );

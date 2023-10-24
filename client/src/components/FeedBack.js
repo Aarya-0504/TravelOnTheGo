@@ -52,7 +52,7 @@ function FeedBack() {
 
   return (
     <div className="p-4 feedback">
-      <h1>Fomr2Email - Feedback</h1>
+      <h1>TravelOnTheGo - Feedback</h1>
       <form onSubmit={handleSubmit} className="form__container">
         <div className="form__controls">
           <label htmlFor="name">Name</label>
