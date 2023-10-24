@@ -92,9 +92,22 @@ const FilterButtons = ({onChangeFilters, filters}) => {
         sx={{ '& .MuiSlider-valueLabel': { color: 'black' } }}
         color='secondary'
       />
+
       {/* <Slider defaultValue={30} step={10} marks min={10} max={110} disabled /> */}
     </Box>
-                </div>
+</div>
+<div class=" mt-3">
+    <span >Time</span>
+
+    <div class="flex items-center mb-4 pt-2">
+        <input id="default-checkbox" type="checkbox" value="" class="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Day</label>
+    </div>
+    <div class="flex items-center">
+        <input checked id="checked-checkbox" type="checkbox" value="" class="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+        <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Night</label>
+    </div>
+</div>
         </div>
         <div className="flex justify-start items-center mx-40 my-3 filter-buttons-container">
           <div className="flex">
