@@ -8,7 +8,7 @@ require("dotenv").config();
 const PORT=8000
 
 const Users = require('./models/Users');
-
+const Places = require('./models/Places');
 //app USE
 const app = express();
 app.use(express.json());
@@ -115,6 +115,23 @@ app.post('/api/login', async (req,res,next)=>{
         console.log(e);
         return res.status(500).json({ error: e.message });
     }        
+})
+
+//posting places
+app.post('/api/places',async(req,res)=>{
+    try{
+        const newPlaces=Places(req.body);
+
+        try{
+            const savedPlaces=await newPlaces.save();
+        res.status(201).json(savedPlaces);
+        }catch(err){
+            res.status(500).json(err);
+        }
+
+    }catch(e){
+        console.log(e);
+    }
 })
 
 
