@@ -11,9 +11,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import ToastContext from "./ToastContext";
 import { useEffect, useRef, useState } from 'react';
 import { useContext } from "react";
+import Button from '@mui/material/Button';
 // import SideBar from "./SideBar";
 // import DropDown from './ThedropDown'
-// import UserInfo from "./UserInfo/UserInfo";
+import UserInfo from "./UserInfo/UserInfo";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -33,10 +34,9 @@ const Header = (props) => {
         alt="TravelOnTheGo"
       />
       </div>  
-      
-      <div>
+      {/* <div>}
       {/* <DropDown/> */}
-      </div>
+      {/*</div> */}
       
       {/* Dropdown start */}
       <Menu as="div" className="relative mx-8 -mt-2 inline-block text-left loc-dropdown">
@@ -212,13 +212,17 @@ const Header = (props) => {
          }}>
              
 			  Logout</button>  
+        
       </div>
-      
+         
+      {/* <div>
+      <UserInfo/>
+      </div> */}
       <div className="lg:hidden navbar">
         <NavBar />
       </div>
       <div>
-
+      
       </div>
     </div>
   );
