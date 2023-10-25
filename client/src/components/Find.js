@@ -5,7 +5,7 @@ function Find({ searchQuery }) {
   const [results, setResults] = useState([]);
 
   const fetchURL =
-    "https://raw.githubusercontent.com/euhidaman/Fake_APIs/main/restaurant_details.json";
+    "http://localhost:3000/";
 
   const getAllDetails = async () => {
     try {

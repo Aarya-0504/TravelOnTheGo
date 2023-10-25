@@ -14,11 +14,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(cors(corsConfigs));
+// app.use(cors(corsConfigs));
 app.use("/api", require("./routes/feedbackRoutes"));
 //routes
-app.get('/', (req, res) => {
-    res.send('Welcome');
+app.get('/', async(req, res) => {
+    const places = await Places.find({});
+    console.log("places>>>>>>>>" ,places);
+        
+    res.send({places});
 })
 
 //registering user
