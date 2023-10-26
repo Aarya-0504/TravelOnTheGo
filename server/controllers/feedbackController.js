@@ -25,7 +25,7 @@ const feedback = async (req, res) => {
     subject: `${req.body.subject}`,
     html: 
     `<div>
-    <p>From: ${req.body.email}</p>
+    <p>To: ${req.body.email}</p>
     <p>Subject: ${req.body.subject}</p>
     <p>${req.body.text}</p>
     </div>`,

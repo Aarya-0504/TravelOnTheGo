@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Fragment } from "react";
 import Find from "./Find";
-import travelonthego from './icons/Travel-PNG-HD-Image.png';
+import travelonthego from '../images/logo_nav.png';
 import { Link, useNavigate} from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import NavBar from "./NavBar";
@@ -39,7 +39,7 @@ const Header = (props) => {
       {/*</div> */}
       
       {/* Dropdown start */}
-      <Menu as="div" className="relative mx-8 -mt-2 inline-block text-left loc-dropdown">
+      <Menu as="div" className="relative mx-8 -mt-5 inline-block text-left loc-dropdown">
         {({ open }) => (
           <>
             <div>
