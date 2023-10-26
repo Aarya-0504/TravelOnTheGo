@@ -4,3 +4,8 @@
     /* margin: auto; */
     border: 2px solid black;
   }
+
+  .custom-popup-image {
+    width: 400px;
+    height: 400px;
+  }

@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Fragment } from "react";
 import Find from "./Find";
-import travelonthego from '../images/logo_nav.png';
+import travelonthego from '../images/logo_nav_white.png';
 import { Link, useNavigate} from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import NavBar from "./NavBar";

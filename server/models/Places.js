@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
     cost: {
         type: String,
         required: true,
-        unique: true,
+        
     },
     people:{
         type:Number,
@@ -28,6 +28,10 @@ const userSchema = mongoose.Schema({
     Photo:{
         type:String,
         required:true,
+    },
+    Type:{
+        type: String,
+        default:"Restaurant",
     }
 });
 
