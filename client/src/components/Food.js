@@ -14,11 +14,32 @@ const Food = ({ filters }) => {
   }, []);
 
   useEffect(() => {
-    console.log(filters)
-    setFilteredRes(
-      resDetail.filter((res) => Number(res.Rating) >= filters.rating)
-    );
-  }, [resDetail, filters.rating]);
+    console.log(filters);
+    const filteredRestaurants = filterRestaurants(resDetail, filters);
+    setFilteredRes(filteredRestaurants);
+  }, [resDetail, filters]);
+
+  const filterRestaurants = (restaurants, filters) => {
+    return restaurants.filter((res) => {
+      if (filters.rating && Number(res.Rating) < filters.rating) {
+        return false;
+      }
+
+      if (filters.cost && Number(res.cost) <= filters.cost) {
+        return false;
+      }
+
+      if (filters.people && Number(res.People) == filters.people) {
+        return false;
+      }
+      
+      // if (filters.time.length > 0 && !filters.time.includes(res.Time)) {
+      //   return false;
+      // }
+
+      return true;
+    });
+  };
 
   const getAllResDetails = () => {
     axios
@@ -39,7 +60,7 @@ const Food = ({ filters }) => {
       <div className="text-gray-400  body-font">
         <div className="container food-body px-10 py-10 md:mx-auto">
           <div className="flex flex-wrap md:-m-4 md:pl-6 foods-container">
-            {resDetail.map((food, index) => (
+            {filteredRes.map((food, index) => (
               <div
                 key={index}
                 className="w-full mb-4 p-2 lg:w-1/4 md:w-1/2 transform transition duration-200 rounded-lg hover:scale-105 hover:shadow-lg food-container"

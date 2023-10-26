@@ -23,6 +23,42 @@ function valuetext(value) {
 const FilterButtons = ({onChangeFilters, filters}) => {
     const [showMenu, setShowMenu] = useState(false);
     const [showSlider,setshowSlider] = useState(false);
+    const [costValue, setCostValue] = useState(500); // Initialize cost value
+    const [peopleValue, setPeopleValue] = useState(1); 
+    const [isDaySelected, setIsDaySelected] = useState(true); // Initialize Day checkbox state
+    const [isNightSelected, setIsNightSelected] = useState(false);
+
+const handleCostChange = (event, newValue) => {
+    setCostValue(newValue); // Update the cost value when the slider changes
+};
+
+const handlePeopleChange = (event, newValue) => {
+        setPeopleValue(newValue); // Update the No. of People value when the slider changes
+    };
+
+    const handleDayCheckboxChange = () => {
+        setIsDaySelected(!isDaySelected); // Toggle the Day checkbox state
+    };
+
+    const handleNightCheckboxChange = () => {
+        setIsNightSelected(!isNightSelected); // Toggle the Night checkbox state
+    };
+
+const applyFilters = () => {
+  const timeFilters = [];
+
+        if (isDaySelected) {
+            timeFilters.push("Day");
+        }
+
+        if (isNightSelected) {
+            timeFilters.push("Night");
+        }
+    const updatedFilters = { ...filters, cost: costValue,people: peopleValue,time: timeFilters  };
+    console.log(updatedFilters)
+    onChangeFilters(updatedFilters);
+    setShowMenu(false); // Close the menu after applying filters
+};
     return (
       <>
         <div
@@ -63,7 +99,8 @@ const FilterButtons = ({onChangeFilters, filters}) => {
             <Box sx={{ width: 250 }}>
               <Slider
                 aria-label="Temperature"
-                defaultValue={500}
+                value={costValue} // Set the value from state
+                onChange={handleCostChange} // Handle cost value change
                 getAriaValueText={valuetext}
                 valueLabelDisplay="auto"
                 step={500}
@@ -84,7 +121,8 @@ const FilterButtons = ({onChangeFilters, filters}) => {
                 <Box sx={{ width: 250}}>
       <Slider
         aria-label="Temperature"
-        defaultValue={1}
+        value={peopleValue} // Set the value from state
+        onChange={handlePeopleChange} // Handle No. of People value change
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         step={1}
@@ -100,14 +138,41 @@ const FilterButtons = ({onChangeFilters, filters}) => {
     <span >Time</span>
 
     <div class="flex items-center mb-4 pt-2">
-        <input id="default-checkbox" type="checkbox" value="" class="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Day</label>
+    <input
+                            id="day-checkbox"
+                            type="checkbox"
+                            value=""
+                            className="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            checked={isDaySelected}
+                            onChange={handleDayCheckboxChange}
+                        />
+                        <label
+                            for="day-checkbox"
+                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >Day</label>
     </div>
     <div class="flex items-center">
-        <input checked id="checked-checkbox" type="checkbox" value="" class="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-        <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Night</label>
+    <input
+                            id="night-checkbox"
+                            type="checkbox"
+                            value=""
+                            className="ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            checked={isNightSelected}
+                            onChange={handleNightCheckboxChange}
+                        />
+                        <label
+                            for="night-checkbox"
+                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >Night</label>
     </div>
 </div>
+<button
+                    onClick={applyFilters}
+                    type="button"
+                    className="flex bg-white hover:bg-gray-100 text-gray-400 px-6 py-2 rounded font-medium mx-3 border border-gray-300 transition duration-200 each-in-out"
+                >
+                    Apply Filters
+                </button>
         </div>
         <div className="flex justify-start items-center mx-40 my-3 filter-buttons-container">
           <div className="flex">
