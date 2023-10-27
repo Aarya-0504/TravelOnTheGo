@@ -10,7 +10,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/footer/Footer";
 
 const HomePage=()=>{
-    const [location, setLocation] = useState("Chennai");
+    const [location, setLocation] = useState("Mumbai");
   const [searchQuery, setQuery] = useState("");
   const [filters, setFilters] = useState({ rating: 0 });
 
