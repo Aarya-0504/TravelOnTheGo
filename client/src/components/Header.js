@@ -97,7 +97,7 @@ const Header = (props) => {
                     {({ active }) => (
                       <button
                         type="button"
-                        onClick={() => setLocation("Bengaluru")}
+                        onClick={() => setLocation("Bandra")}
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -105,7 +105,7 @@ const Header = (props) => {
                           "block px-20 py-3 text-sm"
                         )}
                       >
-                        Bengaluru
+                        Bandra
                       </button>
                     )}
                   </Menu.Item>
@@ -113,7 +113,7 @@ const Header = (props) => {
                     {({ active }) => (
                       <button
                         type="button"
-                        onClick={() => setLocation("Kolkata")}
+                        onClick={() => setLocation("Matunga")}
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -121,7 +121,7 @@ const Header = (props) => {
                           "block px-20 py-3 text-sm"
                         )}
                       >
-                        Kolkata
+                        Matunga
                       </button>
                     )}
                   </Menu.Item>
@@ -129,7 +129,7 @@ const Header = (props) => {
                     {({ active }) => (
                       <button
                         type="button"
-                        onClick={() => setLocation("Delhi NCR")}
+                        onClick={() => setLocation("Dadar")}
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -137,7 +137,7 @@ const Header = (props) => {
                           "block px-20 py-3 text-sm"
                         )}
                       >
-                        Delhi NCR
+                        Dadar
                       </button>
                     )}
                   </Menu.Item>
@@ -145,7 +145,7 @@ const Header = (props) => {
                     {({ active }) => (
                       <button
                         type="button"
-                        onClick={() => setLocation("Mumbai")}
+                        onClick={() => setLocation("Churchgate")}
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -153,7 +153,7 @@ const Header = (props) => {
                           "block px-20 py-3 text-sm"
                         )}
                       >
-                        Mumbai
+                        Churchgate
                       </button>
                     )}
                   </Menu.Item>
@@ -170,7 +170,7 @@ const Header = (props) => {
           className=" w-96 py-4 px-6 text-gray-700 leading-tight focus:outline-none"
           id="search"
           type="text"
-          placeholder="Search for restaurant, cuisine or a dish"
+          placeholder="Search for restaurant or cuisine"
           onInputCapture={(e) => {
             setQuery(e.target.value);
           }}

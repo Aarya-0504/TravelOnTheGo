@@ -32,10 +32,10 @@ const Food = ({ filters }) => {
       if (filters.people && Number(res.People) == filters.people) {
         return false;
       }
-      
-      // if (filters.time.length > 0 && !filters.time.includes(res.Time)) {
-      //   return false;
-      // }
+
+      if(filters.time && !filters.time.includes(String(res.Time))){
+        return false;
+      }
 
       return true;
     });

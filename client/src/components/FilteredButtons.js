@@ -214,7 +214,7 @@ const applyFilters = () => {
               type="button"
               className="flex bg-white hover:bg-gray-100 text-gray-400 px-6 py-2 rounded font-medium mx-3 border border-gray-300 transition duration-200 each-in-out"
             >
-              Pure Veg
+              Time
             </button>
             {/* <button type="button" className="flex bg-white hover:bg-gray-100 text-gray-400 px-6 py-2 rounded font-medium mx-3 border border-gray-300 transition duration-200 each-in-out">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hover:bg-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
