@@ -5,17 +5,20 @@ function Find({ searchQuery }) {
   const [results, setResults] = useState([]);
 
   const fetchURL =
-    "http://localhost:3000/";
+    "http://localhost:8000/";
 
-  const getAllDetails = async () => {
-    try {
-      const allDetails = await axios.get(fetchURL);
-      const { foodDetails } = allDetails.data;
-      setResults(foodDetails);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    const getAllDetails = () => {
+      axios
+        .get(fetchURL)
+        .then((res) => {
+          const allDetails = res.data.places;
+          console.log(allDetails);
+          setResults(allDetails);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
   useEffect(() => {
     getAllDetails();
     // return () => setResults([]);
@@ -23,21 +26,23 @@ function Find({ searchQuery }) {
 
   return (
     <>
-      {results
-        .filter((val) => val.hotelName.toLowerCase().includes(searchQuery))
+      {
+        results && results.length>0 ?(
+        results
+        .filter((val) => val.placeName.toLowerCase().includes(searchQuery))
         .map((val, index) => (
-          <div className="flex  " key={index}>
+          <div className="flex" style={{ backgroundColor: 'white' }} key={index}>
             <div className="flex space-x-6 ">
               <img
-                src={val.hotelUrl}
+                src={val.Photo}
                 alt="food-pic"
                 className=" w-24 h-24 mb-5 rounded-lg"
               />
               <div>
-                <p className=" text-base font-semibold ">{val.hotelName}</p>
+                <p className=" text-base font-semibold ">{val.placeName}</p>
                 <div className="flex">
                   <div className="flex items-center font-bold text-sm py-1 w-max px-3 mt-1 rounded-md text-white bg-green-500">
-                    {val.hotelRating}
+                    {val.Rating}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 ml-0.5 mt-0.5 bg-green-500"
@@ -48,11 +53,16 @@ function Find({ searchQuery }) {
                     </svg>
                   </div>
                 </div>
-                <p className="font-light mt-1">{val.hotelType}</p>
+                <p className="font-light mt-1">{val.Type}</p>
               </div>
             </div>
           </div>
-        ))}
+        
+        ))
+        ):(
+          <p>No results found</p>
+          )
+          }
     </>
   );
 }
